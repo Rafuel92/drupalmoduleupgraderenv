@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains entityraf.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function entityraf_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the entityraf module.
+    case 'help.page.entityraf':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function entityraf_theme() {
+  return [
+    'entityraf' => [
+      'template' => 'entityraf',
+      'render element' => 'children',
+    ],
+  ];
+}
